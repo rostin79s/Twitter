@@ -1,0 +1,13 @@
+users
+id unique int
+username unique char(20)
+password char(20)
+time timestamp
+
+tweets
+id unique int
+username char(20)
+num_likes int
+retweet boolean
+time timestamp
+tweet char(40)

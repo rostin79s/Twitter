@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_package = "ex.grpc";
+
+package twitter;
+
+
+service s_register {
+    rpc register_user (user_request) returns (user_reply);
+    rpc login_user (login_request) returns (login_reply);
+    rpc tweet (tweet_request) returns (tweet_reply);
+}
+
+
+message user_request {
+    string username=1;
+    string password=2;
+}
+
+message user_reply {
+    string res_register=1;
+}
+
+message login_request{
+    string username=1;
+    string password=2;
+}
+
+message login_reply{
+    string res_login=1;
+}
+
+message tweet_request{
+    string tweet=1;
+    string username=2;
+    string command=3;
+    string id=4;
+}
+
+message  tweet_reply{
+    string res_tweet=1;
+}
